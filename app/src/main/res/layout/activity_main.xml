@@ -47,15 +47,15 @@
             android:textAllCaps="false"
             android:text="Iniciar Sesión"
             />
+
         <Button
-            android:id="@+id/btnSalir"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:id="@+id/btnRegistrarse"
+            android:layout_width="267dp"
+            android:layout_height="25dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.1"
-            android:textAllCaps="false"
-            android:text="Salir"
-            />
+            android:text="Registrarse"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

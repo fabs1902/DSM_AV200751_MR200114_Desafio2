@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "744369127148",
+    "firebase_url": "https://desafio2dsm-av200751-mr200114-default-rtdb.firebaseio.com",
+    "project_id": "desafio2dsm-av200751-mr200114",
+    "storage_bucket": "desafio2dsm-av200751-mr200114.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744369127148:android:10969d3879093d9ee5afc9",
+        "android_client_info": {
+          "package_name": "com.example.dsm_av200751_mr200114_desafio2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3rhD3Pm6K5wEmFIybzgrxCl2nRXQKRUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
