@@ -54,7 +54,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/txtCorreo"
             android:layout_width="377dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -97,7 +97,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:ems="10"
-            android:inputType="textPassword"
             android:layout_gravity="start"
             android:textSize="18sp" />
         <TextView
@@ -116,7 +115,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:ems="10"
-            android:inputType="textPassword"
             android:layout_gravity="start"
             android:textSize="18sp" />
 
