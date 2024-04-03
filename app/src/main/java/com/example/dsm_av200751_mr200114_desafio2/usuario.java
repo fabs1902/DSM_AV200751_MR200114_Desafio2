@@ -9,18 +9,25 @@ import android.widget.Button;
 
 public class usuario extends AppCompatActivity {
 
-    Button btnRegistrarTicket, btnHistorialTicket;
+    Button btnRegistrarTicket, btnHistorialTicket, btnListaTickets;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
 
         btnRegistrarTicket = findViewById(R.id.btnRegistrarTicket2);
-
+        btnListaTickets = findViewById(R.id.btnControlTicket);
         btnRegistrarTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(usuario.this,RegistrarTicket.class));
+            }
+        });
+
+        btnListaTickets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(usuario.this,ListaTicket.class));
             }
         });
     }

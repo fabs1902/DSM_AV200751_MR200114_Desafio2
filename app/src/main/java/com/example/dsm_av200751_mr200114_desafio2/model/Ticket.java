@@ -96,4 +96,11 @@ public class Ticket {
     public Ticket() {
     }
 
+    @Override
+    public String toString() {
+        return "Título: " + titulo +
+                "\nNúmero: " + numero +
+                "\nFecha de creación: " + fechaCreacion +
+                "\nDescripción: " + descripcion;
+    }
 }
