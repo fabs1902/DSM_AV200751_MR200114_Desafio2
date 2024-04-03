@@ -23,7 +23,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnRegistrarTicket2"
             android:layout_width="377dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -32,7 +32,7 @@
             android:text="Agregar ticket" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnHistorialTicket"
             android:layout_width="377dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

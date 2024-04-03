@@ -34,14 +34,16 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/txtNombre"
+            android:id="@+id/txtNumeroTicket"
             android:layout_width="377dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_gravity="start"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView3"
@@ -60,7 +62,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView4"
@@ -76,11 +80,13 @@
             android:id="@+id/txtContra"
             android:layout_width="377dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:layout_marginStart="16dp"
             android:ems="10"
             android:inputType="textPassword"
-            android:layout_gravity="start"
-            android:textSize="18sp" />
+            android:minHeight="48dp"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
@@ -95,10 +101,12 @@
             android:id="@+id/txtDepartamento"
             android:layout_width="377dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:layout_marginStart="16dp"
             android:ems="10"
-            android:layout_gravity="start"
-            android:textSize="18sp" />
+            android:minHeight="48dp"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
@@ -113,10 +121,12 @@
             android:id="@+id/txtTipoUsuario"
             android:layout_width="377dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:layout_marginStart="16dp"
             android:ems="10"
-            android:layout_gravity="start"
-            android:textSize="18sp" />
+            android:minHeight="48dp"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/btnRegistrar"

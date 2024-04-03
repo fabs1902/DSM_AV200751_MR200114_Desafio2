@@ -31,7 +31,7 @@ public class RegistroUsuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuarios);
 
-        nombre = findViewById(R.id.txtNombre);
+        nombre = findViewById(R.id.txtNumeroTicket);
         correo = findViewById(R.id.txtCorreo);
         password = findViewById(R.id.txtContra);
         departamento = findViewById(R.id.txtDepartamento);
