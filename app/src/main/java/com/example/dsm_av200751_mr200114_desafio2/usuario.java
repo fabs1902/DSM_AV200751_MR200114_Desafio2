@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class usuario extends AppCompatActivity {
 
-    Button btnRegistrarTicket, btnHistorialTicket, btnListaTickets;
+    Button btnRegistrarTicket, btnHistorialTicket, btnListaTickets, btnCerrarSesion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +18,7 @@ public class usuario extends AppCompatActivity {
         btnRegistrarTicket = findViewById(R.id.btnRegistrarTicket2);
         btnListaTickets = findViewById(R.id.btnControlTicket);
         btnHistorialTicket = findViewById(R.id.btnHistorialTicket);
+        btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
         btnRegistrarTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +37,13 @@ public class usuario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(usuario.this,HistorialTicket.class));
+            }
+        });
+
+       btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(usuario.this, Login.class));
             }
         });
     }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.dsm_av200751_mr200114_desafio2.model.Ticket;
@@ -29,14 +30,16 @@ public class Admin extends AppCompatActivity {
     ListView listaV_Ticket;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    Button btnCerrarSesion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_ticket);
+        setContentView(R.layout.activity_admin);
 
         listaV_Ticket = findViewById(R.id.lstTickets);
         inicializarFirebase();
         listaDatos();
+        btnCerrarSesion = findViewById(R.id.btnCerrarSesion7);
         listaV_Ticket.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -56,6 +59,13 @@ public class Admin extends AppCompatActivity {
                 intent.putExtra("fechaFinalizacion", ticketSeleccionado.getFechaFinalización());
                 // Abrir la actividad ActualizarTicket
                 startActivity(intent);
+            }
+        });
+
+        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Admin.this, Login.class));
             }
         });
     }

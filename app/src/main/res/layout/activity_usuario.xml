@@ -9,17 +9,19 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
+        android:layout_marginEnd="2dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="match_parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seleccione una opción"
-            android:gravity="center_horizontal"
             android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:text="Seleccione una opción"
             android:textSize="20sp" />
 
         <Button
@@ -27,8 +29,8 @@
             android:layout_width="377dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
             android:text="Agregar ticket" />
 
         <Button
@@ -38,6 +40,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:text="Control de tickets" />
+
         <Button
             android:id="@+id/btnHistorialTicket"
             android:layout_width="377dp"
@@ -46,6 +49,14 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:text="Ver tickets" />
+
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="377dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Cerrar sesión" />
 
 
     </LinearLayout>

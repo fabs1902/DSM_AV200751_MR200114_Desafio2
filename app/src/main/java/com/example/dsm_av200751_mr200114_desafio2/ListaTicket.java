@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.dsm_av200751_mr200114_desafio2.model.Ticket;
@@ -28,12 +29,14 @@ public class ListaTicket extends AppCompatActivity {
     ListView listaV_Ticket;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    Button btnRegresar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_ticket);
 
         listaV_Ticket = findViewById(R.id.lstTickets);
+        btnRegresar = findViewById(R.id.btnRegresar);
         inicializarFirebase();
         listaDatos();
         listaV_Ticket.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,6 +58,13 @@ public class ListaTicket extends AppCompatActivity {
                 intent.putExtra("fechaFinalizacion", ticketSeleccionado.getFechaFinalización());
                 // Abrir la actividad ActualizarTicket
                 startActivity(intent);
+            }
+        });
+
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ListaTicket.this, usuario.class));
             }
         });
     }
