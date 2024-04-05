@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DSM_AV200751_MR200114_Desafio2"
         tools:targetApi="31">
         <activity
+            android:name=".FinalizarTicket"
+            android:exported="false" />
+        <activity
             android:name=".InformacionTicketFinalizado"
             android:exported="false" />
         <activity

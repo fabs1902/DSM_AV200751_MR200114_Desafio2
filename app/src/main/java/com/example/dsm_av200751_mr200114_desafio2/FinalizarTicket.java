@@ -14,7 +14,9 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ActualizarTicket extends AppCompatActivity {
+import java.util.Date;
+
+public class FinalizarTicket extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -23,7 +25,7 @@ public class ActualizarTicket extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_actualizar_ticket);
+        setContentView(R.layout.activity_finalizar_ticket);
 
         // Inicializar Firebase
         FirebaseApp.initializeApp(this);
@@ -55,7 +57,6 @@ public class ActualizarTicket extends AppCompatActivity {
         txtFechaCreacion = findViewById(R.id.txtfechaCreacion);
         txtEstado = findViewById(R.id.txtEstado);
         txtFechaFinalizacion = findViewById(R.id.txtFechaFinalizacion);
-        btnEliminar = findViewById(R.id.btnEliminarTicket);
         btnRegresar = findViewById(R.id.btnRegresar);
 
         txtNumeroTicket.setText(numero);
@@ -72,26 +73,21 @@ public class ActualizarTicket extends AppCompatActivity {
         btnActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                actualizarTicket();
+                finalizarTicket();
             }
         });
 
-        btnEliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                eliminarTicket();
-            }
-        });
+
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ActualizarTicket.this, usuario.class));
+                startActivity(new Intent(FinalizarTicket.this, usuario.class));
             }
         });
     }
 
-    public void actualizarTicket(){
+    public void finalizarTicket(){
         Ticket ticket = new Ticket();
         ticket.setTid(txtIdTicket.getText().toString());
         ticket.setNumero(txtNumeroTicket.getText().toString());
@@ -100,30 +96,15 @@ public class ActualizarTicket extends AppCompatActivity {
         ticket.setDepartamento(txtDepartamento.getText().toString());
         ticket.setAutor(txtNombreAutor.getText().toString());
         ticket.setCorreo(txtEmailContacto.getText().toString());
-        ticket.setFechaFinalización(txtFechaFinalizacion.getText().toString());
-        ticket.setEstado(txtEstado.getText().toString());
+        ticket.setFechaFinalización(new Date().toString());
+        ticket.setEstado("Finalizado");
         ticket.setFechaCreacion(txtFechaCreacion.getText().toString());
         databaseReference.child("Ticket").child(ticket.getTid()).setValue(ticket);
-        Toast.makeText(ActualizarTicket.this, "Ticket actualizado", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(ActualizarTicket.this, ListaTicket.class));
+        Toast.makeText(FinalizarTicket.this, "Ticket finalizado", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(FinalizarTicket.this, Admin.class));
     }
 
-    private void limpiarCampos() {
-        // Limpiar los campos
-        txtNumeroTicket.setText("");
-        txtTituloTicket.setText("");
-        txtDescripcionTicket.setText("");
-        txtDepartamento.setText("");
-        txtNombreAutor.setText("");
-        txtEmailContacto.setText("");
-        txtIdTicket.setText("");
-    }
 
-    private void eliminarTicket(){
-        Ticket ticket = new Ticket();
-        ticket.setTid(txtIdTicket.getText().toString());
-        databaseReference.child("Ticket").child(ticket.getTid()).removeValue();
-        Toast.makeText(ActualizarTicket.this,"Ticket eliminado",Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(ActualizarTicket.this, ListaTicket.class));
-    }
+
+
 }

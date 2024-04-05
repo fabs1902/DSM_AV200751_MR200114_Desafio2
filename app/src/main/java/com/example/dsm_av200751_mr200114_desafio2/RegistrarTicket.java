@@ -39,7 +39,7 @@ public class RegistrarTicket extends AppCompatActivity {
         departamentoUsuario = findViewById(R.id.txtDepartamento);
         autorTicket = findViewById(R.id.txtNombreAutor);
         correoContacto = findViewById(R.id.txtEmailContacto);
-        btnRegistrar = findViewById(R.id.btnActualizarTicket);
+        btnRegistrar = findViewById(R.id.btnRegistrarTicket);
         btnRegresar = findViewById(R.id.btnRegresar);
 
         // Inicializar Firebase

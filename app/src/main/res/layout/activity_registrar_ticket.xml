@@ -145,7 +145,7 @@
                     android:inputType="text"
                     android:minHeight="48dp" />
                 <Button
-                    android:id="@+id/btnActualizarTicket"
+                    android:id="@+id/btnRegistrarTicket"
                     android:layout_width="377dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

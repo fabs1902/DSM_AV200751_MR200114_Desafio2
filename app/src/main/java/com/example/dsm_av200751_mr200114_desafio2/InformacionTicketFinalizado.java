@@ -49,11 +49,9 @@ public class InformacionTicketFinalizado extends AppCompatActivity {
         txtNombreAutor = findViewById(R.id.txtNombreAutor);
         txtEmailContacto = findViewById(R.id.txtEmailContacto);
         txtIdTicket = findViewById(R.id.txtIdTicket);
-        btnActualizar = findViewById(R.id.btnActualizarTicket);
         txtFechaCreacion = findViewById(R.id.txtfechaCreacion);
         txtEstado = findViewById(R.id.txtEstado);
         txtFechaFinalizacion = findViewById(R.id.txtFechaFinalizacion);
-        btnEliminar = findViewById(R.id.btnEliminarTicket);
         btnRegresar = findViewById(R.id.btnRegresar);
 
         txtNumeroTicket.setText(numero);
