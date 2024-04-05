@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.dsm_av200751_mr200114_desafio2.model.Ticket;
+
+import java.util.ArrayList;
+import java.util.List;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,17 +26,18 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaTicket extends AppCompatActivity {
+public class HistorialTicket extends AppCompatActivity {
 
-    private List<Ticket> listaTickets = new ArrayList<Ticket>();
+    private List<Ticket> listaTickets = new ArrayList<>();
     ArrayAdapter<Ticket> arrayAdapterTicket;
     ListView listaV_Ticket;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_ticket);
+        setContentView(R.layout.activity_historial_ticket);
 
         listaV_Ticket = findViewById(R.id.lstTickets);
         inicializarFirebase();
@@ -41,7 +47,7 @@ public class ListaTicket extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Ticket ticketSeleccionado = listaTickets.get(position);
                 // Crear un Intent para abrir la actividad ActualizarTicket
-                Intent intent = new Intent(ListaTicket.this, ActualizarTicket.class);
+                Intent intent = new Intent(HistorialTicket.this, InformacionTicketFinalizado.class);
                 // Pasar los datos del ticket seleccionado como extras en el Intent
                 intent.putExtra("tid", ticketSeleccionado.getTid());
                 intent.putExtra("titulo", ticketSeleccionado.getTitulo());
@@ -59,25 +65,6 @@ public class ListaTicket extends AppCompatActivity {
         });
     }
 
-    /*private void listaDatos() {
-        databaseReference.child("Ticket").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listaTickets.clear();
-                for(DataSnapshot objSnaptshot : dataSnapshot.getChildren()){
-                    Ticket ticket = objSnaptshot.getValue(Ticket.class);
-                    listaTickets.add(ticket);
-                }
-                // Crear el adaptador después de haber agregado todos los tickets
-                arrayAdapterTicket = new ArrayAdapter<Ticket>(ListaTicket.this, android.R.layout.simple_list_item_1, listaTickets);
-                listaV_Ticket.setAdapter(arrayAdapterTicket);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
-    }*/
     private void listaDatos() {
         databaseReference.child("Ticket").addValueEventListener(new ValueEventListener() {
             @Override
@@ -85,13 +72,13 @@ public class ListaTicket extends AppCompatActivity {
                 listaTickets.clear();
                 for(DataSnapshot objSnapshot : dataSnapshot.getChildren()){
                     Ticket ticket = objSnapshot.getValue(Ticket.class);
-                    // Agregar solo los tickets con estado "Activo" a la lista
-                    if (ticket.getEstado().equals("Activo")) {
+                    // Agregar solo los tickets con estado "Finalizado" a la lista
+                    if (ticket.getEstado().equals("Finalizado")) {
                         listaTickets.add(ticket);
                     }
                 }
-                // Crear el adaptador después de haber agregado todos los tickets con estado "Activo"
-                arrayAdapterTicket = new ArrayAdapter<>(ListaTicket.this, android.R.layout.simple_list_item_1, listaTickets);
+                // Crear el adaptador después de haber agregado todos los tickets con estado "Finalizado"
+                arrayAdapterTicket = new ArrayAdapter<>(HistorialTicket.this, android.R.layout.simple_list_item_1, listaTickets);
                 listaV_Ticket.setAdapter(arrayAdapterTicket);
             }
 
@@ -102,13 +89,10 @@ public class ListaTicket extends AppCompatActivity {
         });
     }
 
-
     public void inicializarFirebase(){
         FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
     }
-
-
 
 }
