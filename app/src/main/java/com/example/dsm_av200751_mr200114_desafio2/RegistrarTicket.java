@@ -1,5 +1,6 @@
 package com.example.dsm_av200751_mr200114_desafio2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +39,7 @@ public class RegistrarTicket extends AppCompatActivity {
         departamentoUsuario = findViewById(R.id.txtDepartamento);
         autorTicket = findViewById(R.id.txtNombreAutor);
         correoContacto = findViewById(R.id.txtEmailContacto);
-        btnRegistrar = findViewById(R.id.btnRegistrarTicket);
+        btnRegistrar = findViewById(R.id.btnActualizarTicket);
         btnRegresar = findViewById(R.id.btnRegresar);
 
         // Inicializar Firebase
@@ -49,6 +50,13 @@ public class RegistrarTicket extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registrarTicket();
+            }
+        });
+
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegistrarTicket.this, usuario.class));
             }
         });
     }

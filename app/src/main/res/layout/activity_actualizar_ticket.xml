@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListaTicket">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:text="Actualizar información de ticket"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                android:text="Número de ticket"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/txtNumeroTicket"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="start"
+                android:text="Título del ticket"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/txtTituloTicket"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="start"
+                android:text="Departamento al que pertenece el usuario"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/txtDepartamento"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="start"
+                android:text="Descripcion del ticket"
+                android:textSize="18sp" />
+            <EditText
+                android:id="@+id/txtDescripcionTicket"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:inputType="text" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="start"
+                android:text="Nombre del autor"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/txtNombreAutor"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="start"
+                android:text="Email de contacto"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/txtEmailContacto"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/txtIdTicket"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:inputType="text"
+                android:visibility="gone"/>
+            <EditText
+                android:id="@+id/txtfechaCreacion"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:inputType="text"
+                android:visibility="gone"/>
+            <EditText
+                android:id="@+id/txtEstado"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:inputType="text"
+                android:visibility="gone"/>
+            <EditText
+                android:id="@+id/txtFechaFinalizacion"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="start"
+                android:ems="10"
+                android:inputType="text"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btnActualizarTicket"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Actualizar" />
+
+            <Button
+                android:id="@+id/btnRegresar"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Regresar" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
