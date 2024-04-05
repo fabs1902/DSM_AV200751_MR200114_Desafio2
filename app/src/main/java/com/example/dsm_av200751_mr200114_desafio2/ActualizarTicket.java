@@ -19,7 +19,7 @@ public class ActualizarTicket extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     EditText txtNumeroTicket, txtTituloTicket, txtDescripcionTicket, txtDepartamento, txtNombreAutor, txtEmailContacto, txtIdTicket, txtFechaCreacion, txtEstado, txtFechaFinalizacion;
-    Button btnActualizar, btnRegresar;
+    Button btnActualizar, btnRegresar, btnEliminar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +55,7 @@ public class ActualizarTicket extends AppCompatActivity {
         txtFechaCreacion = findViewById(R.id.txtfechaCreacion);
         txtEstado = findViewById(R.id.txtEstado);
         txtFechaFinalizacion = findViewById(R.id.txtFechaFinalizacion);
+        btnEliminar = findViewById(R.id.btnEliminarTicket);
 
         txtNumeroTicket.setText(numero);
         txtTituloTicket.setText(titulo);
@@ -71,6 +72,13 @@ public class ActualizarTicket extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 actualizarTicket();
+            }
+        });
+
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                eliminarTicket();
             }
         });
     }
@@ -101,5 +109,13 @@ public class ActualizarTicket extends AppCompatActivity {
         txtNombreAutor.setText("");
         txtEmailContacto.setText("");
         txtIdTicket.setText("");
+    }
+
+    private void eliminarTicket(){
+        Ticket ticket = new Ticket();
+        ticket.setTid(txtIdTicket.getText().toString());
+        databaseReference.child("Ticket").child(ticket.getTid()).removeValue();
+        Toast.makeText(ActualizarTicket.this,"Ticket eliminado",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(ActualizarTicket.this, ListaTicket.class));
     }
 }

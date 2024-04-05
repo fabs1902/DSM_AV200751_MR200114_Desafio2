@@ -52,7 +52,7 @@ public class ListaTicket extends AppCompatActivity {
                 intent.putExtra("correo", ticketSeleccionado.getCorreo());
                 intent.putExtra("fechaCreacion", ticketSeleccionado.getFechaCreacion());
                 intent.putExtra("estado", ticketSeleccionado.getEstado());
-                intent.putExtra("fechaFinalizacion", ticketSeleccionado.getFechaCreacion());
+                intent.putExtra("fechaFinalizacion", ticketSeleccionado.getFechaFinalización());
                 // Abrir la actividad ActualizarTicket
                 startActivity(intent);
             }

@@ -195,6 +195,14 @@
                 android:text="Actualizar" />
 
             <Button
+                android:id="@+id/btnEliminarTicket"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Eliminar" />
+
+            <Button
                 android:id="@+id/btnRegresar"
                 android:layout_width="377dp"
                 android:layout_height="wrap_content"
