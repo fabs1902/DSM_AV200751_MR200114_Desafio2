@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
                         String tipoUsuario = usuarioSnapshot.child("tipoUsuario").getValue(String.class);
 
                         if (contraseñaUsuario.equals(password)) {
-                            if ("administrador".equals(tipoUsuario)) {
+                            if ("Administrador".equals(tipoUsuario)) {
                                 startActivity(new Intent(Login.this, Admin.class));
                                 Toast.makeText(Login.this, "Bienvenido administrador", Toast.LENGTH_SHORT).show();
                             } else {
